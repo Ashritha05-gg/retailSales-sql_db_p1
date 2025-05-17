@@ -5,7 +5,7 @@
 **Project Title**: Retail Sales Analysis  
 
 
-This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. 
+This project is designed to demonstrate SQL by exploring, cleaning, and analyzing retail sales data. The project involves setting up a retail sales database, performing exploratory data analysis (EDA), and answering specific business questions through SQL queries. 
 
 ## Objectives
 
@@ -120,14 +120,14 @@ ORDER BY total_transactions DESC
 LIMIT 1;
 ```
 6. **Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category.**:
-```
+```sql
 SELECT
     ROUND(AVG(age), 2) as avg_age
 FROM retail_sales
 WHERE category = 'Beauty';
 ```
 7. ** Write a SQL query to find all transactions where the total_sale is greater than 1000.**:
-```
+```sql
 SELECT * FROM retail_sales
 WHERE total_sale > 1000;
 ```
@@ -156,7 +156,7 @@ ORDER BY 2 DESC
 LIMIT 5
 ```
 10. ** Which age group contributes the most to total sales.**:
-```
+```sql
 SELECT 
     CASE 
         WHEN age BETWEEN 18 AND 25 THEN '18-25'
@@ -199,13 +199,13 @@ FROM hourly_sale
 GROUP BY shift
 ```
 13. ** What is the average number of items sold per transaction (across all data).**:
-```
+```sql
 SELECT 
     ROUND(AVG(quantity), 2) AS avg_items_per_transaction
 FROM retail_sales;
 ```
  14. **What is the total revenue and average unit price per category.**:
- ```
+ ```sql
 SELECT 
     category,
     ROUND(SUM(total_sale), 2) AS total_revenue,
@@ -215,7 +215,7 @@ GROUP BY category
 ORDER BY total_revenue DESC;
 ```
 15. ** On which day of the week do we have the highest number of sales.**:
-```
+```sql
 SELECT 
     TO_CHAR(sale_date, 'Day') AS day_of_week,
     COUNT(*) AS total_transactions
